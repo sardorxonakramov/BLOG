@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+    <h1>Home</h1>
+    <p>Welcome to the home page!</p>
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h3><a href="{% url 'detail' post.id %}">{{ post.title }}</a></h3>
+                <p >{{ post.content }}</p>
+                <p style="color:pink;"> {{ post.date_posted }}</p>
+
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endblock content %}
